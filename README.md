@@ -1,9 +1,5 @@
 # geschke/powerdns-server
 
-[![Image Size](https://images.microbadger.com/badges/image/geschke/powerdns-server.svg)](https://microbadger.com/images/geschke/powerdns-server)
-[![Version](https://images.microbadger.com/badges/version/geschke/powerdns-server.svg)](https://microbadger.com/images/geschke/powerdns-server)
-[![Docker Automated build](https://img.shields.io/docker/cloud/build/geschke/powerdns-server)](https://hub.docker.com/r/geschke/powerdns-server)
-
 This is a Docker image with PowerDNS server with MySQL/MariaDB and SQLite3 support.
 
 ## Usage
