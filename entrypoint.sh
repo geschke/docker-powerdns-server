@@ -39,6 +39,7 @@ file_env 'MYSQL_PORT'
 file_env 'MYSQL_USER'
 file_env 'MYSQL_NAME'
 file_env 'MYSQL_PASSWORD'
+file_env 'MYSQL_DNSSEC'
 file_env 'PDNS_BACKEND'
 file_env 'SQLITE3_PATH'
 file_env 'PDNS_API_KEY'
@@ -74,6 +75,7 @@ MYSQL_PORT=${MYSQL_PORT:-3306}
 MYSQL_USER=${MYSQL_USER:-dbuser}
 MYSQL_NAME=${MYSQL_NAME:-powerdns}
 MYSQL_PASSWORD=${MYSQL_PASSWORD:-}
+MYSQL_DNSSEC=${MYSQL_DNSSEC:-no}
 
 MYSQL_CLI="/usr/bin/mysql --host=${MYSQL_HOST} --user=${MYSQL_USER} --password=${MYSQL_PASSWORD} --port=${MYSQL_PORT} -r -N"
 
@@ -137,7 +139,8 @@ if ${PDNS_AUTOCONFIG} ; then
       sed -i -E "s/(^gmysql-dbname=)(.*)/\1${MYSQL_NAME}/g" ${PDNS_CONFIG_FILE};
       grep -q "^gmysql-password=" ${PDNS_CONFIG_FILE} || echo "gmysql-password=" | tee --append ${PDNS_CONFIG_FILE} > /dev/null;
       sed -i -E "s/(^gmysql-password=)(.*)/\1${MYSQL_PASSWORD}/g" ${PDNS_CONFIG_FILE};
-
+      grep -q "^gmysql-dnssec=" ${PDNS_CONFIG_FILE} || echo "gmysql-dnssec=" | tee --append ${PDNS_CONFIG_FILE} > /dev/null;
+      sed -i -E "s/(^gmysql-dnssec=)(.*)/\1${MYSQL_DNSSEC}/g" ${PDNS_CONFIG_FILE};
 
       ;;
     sqlite3)

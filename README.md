@@ -38,6 +38,7 @@ To download the image run
   * `MYSQL_USER=dbuser`
   * `MYSQL_PASSWORD=<empty>` Password
   * `MYSQL_NAME=powerdns` Name of database
+  * `MYSQL_DNSSEC=no` Support for DNSSEC, disabled by default.
 
 * API Key
 
