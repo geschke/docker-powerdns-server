@@ -1,5 +1,9 @@
 # geschke/powerdns-server
 
+![Docker Pulls](https://img.shields.io/docker/pulls/geschke/powerdns-server)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/geschke/powerdns-server/latest)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/geschke/docker-powerdns-server/docker-publish.yml)
+
 This is a Docker image with PowerDNS server with MySQL/MariaDB and SQLite3 support.
 
 ## Usage
