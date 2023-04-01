@@ -69,12 +69,12 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       # Login to Docker Hub (default when no registry variable exists)
-#      - name: Login to DockerHub
-#        if: github.event_name != 'pull_request'
-#        uses: docker/login-action@v2
-#        with:
-#          username: ${{ secrets.DOCKER_USERNAME }}
-#          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Login to DockerHub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
@@ -88,8 +88,7 @@ jobs:
             type=match,pattern=v(.*),group=1
           flavor: |
             latest=false
-#          images: ${{ env.REGISTRY_DOCKER_HUB }}/${{ env.IMAGE_NAME }},${{ env.REGISTRY_GITHUB }}/${{ env.IMAGE_NAME }}
-          images: ${{ env.REGISTRY_GITHUB }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY_DOCKER_HUB }}/${{ env.IMAGE_NAME }},${{ env.REGISTRY_GITHUB }}/${{ env.IMAGE_NAME }}
 
       - name: Show some information after meta run
         id: showinfo
