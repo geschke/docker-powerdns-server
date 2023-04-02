@@ -17,7 +17,7 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends \
   && apt-get install -y locales \
   && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
-  && apt-get install -y curl git gnupg pdns-server pdns-backend-sqlite3 pdns-backend-mysql mysql-client \
+  && apt-get install -y curl git gnupg pdns-server pdns-backend-sqlite3 pdns-backend-mysql mysql-client sqlite3 \
   && rm -rf /var/lib/apt/lists/* 
 
 
