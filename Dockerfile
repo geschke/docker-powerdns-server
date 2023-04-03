@@ -1,15 +1,15 @@
-FROM ubuntu:jammy-20230308
+FROM ubuntu:kinetic-20230308
 
 LABEL maintainer="Ralf Geschke <ralf@kuerbis.org>"
 
-LABEL last_changed="2023-04-01"
+LABEL last_changed="2023-04-03"
 
 
 # necessary to set default timezone Etc/UTC
 ENV DEBIAN_FRONTEND noninteractive
 
 
-# testing Ubuntu 22.04 jammy
+# testing Ubuntu 22.10 kinetic
 RUN apt-get update \
   && apt-get -y upgrade \
   && apt-get -y dist-upgrade \
@@ -18,6 +18,7 @@ RUN apt-get update \
   && apt-get install -y locales \
   && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8 \
   && apt-get install -y curl git gnupg pdns-server pdns-backend-sqlite3 pdns-backend-mysql mysql-client sqlite3 \
+  && apt-get -y upgrade \
   && rm -rf /var/lib/apt/lists/* 
 
 
