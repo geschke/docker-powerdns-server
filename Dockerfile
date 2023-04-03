@@ -1,4 +1,4 @@
-FROM ubuntu:ubuntu:lunar-20230314
+FROM ubuntu:lunar-20230314
 
 LABEL maintainer="Ralf Geschke <ralf@kuerbis.org>"
 
