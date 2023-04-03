@@ -1,4 +1,4 @@
-FROM ubuntu:kinetic-20230308
+FROM ubuntu:ubuntu:lunar-20230314
 
 LABEL maintainer="Ralf Geschke <ralf@kuerbis.org>"
 
@@ -9,7 +9,7 @@ LABEL last_changed="2023-04-03"
 ENV DEBIAN_FRONTEND noninteractive
 
 
-# testing Ubuntu 22.10 kinetic
+# testing Ubuntu 23.04 lunar
 RUN apt-get update \
   && apt-get -y upgrade \
   && apt-get -y dist-upgrade \
